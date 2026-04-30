@@ -1343,7 +1343,7 @@ For the multi-user / multi-model case, a scheduler manages a pool of sessions, s
 
 ```
 apaga/
-├── ARCHITECTURE.md          ← This document
+├── docs/ARCHITECTURE.md          ← This document
 ├── README.md
 ├── LICENSE
 ├── mojoproject.toml         ← Mojo package manifest
@@ -1470,5 +1470,5 @@ apaga/
 
 ---
 
-*apaga architecture document · revision 0.1.0*
+*apaga architecture document · revision 0.1.0* 30.04.2026
 *All design decisions in this document are provisional until the corresponding layer passes its test suite.*
