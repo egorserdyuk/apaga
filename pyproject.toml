@@ -1,0 +1,7 @@
+[project]
+name = "apaga"
+version = "0.1.0"
+description = "Universal Local AI Inference Library for Mojo"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
