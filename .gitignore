@@ -270,3 +270,9 @@ build/
 bin/
 dist/
 .mojo_cache/
+
+
+# Other
+.agents
+.kilocode
+skills-lock.json
