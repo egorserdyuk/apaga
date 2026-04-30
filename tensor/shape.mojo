@@ -23,14 +23,30 @@ struct Shape(Copyable):
         return shape^
 
     @staticmethod
-    fn from_params(num_dims: Int, *dims: Int) -> Shape:
+    fn from_params(d0: Int, d1: Int) -> Shape:
         var shape = Shape()
-        var d = num_dims
-        if d > MAX_DIMS:
-            d = MAX_DIMS
-        shape.ndim = d
-        for i in range(d):
-            shape.dims[i] = dims[i]
+        shape.ndim = 2
+        shape.dims[0] = d0
+        shape.dims[1] = d1
+        return shape^
+
+    @staticmethod
+    fn from_params_3(d0: Int, d1: Int, d2: Int) -> Shape:
+        var shape = Shape()
+        shape.ndim = 3
+        shape.dims[0] = d0
+        shape.dims[1] = d1
+        shape.dims[2] = d2
+        return shape^
+
+    @staticmethod
+    fn from_params_4(d0: Int, d1: Int, d2: Int, d3: Int) -> Shape:
+        var shape = Shape()
+        shape.ndim = 4
+        shape.dims[0] = d0
+        shape.dims[1] = d1
+        shape.dims[2] = d2
+        shape.dims[3] = d3
         return shape^
 
     fn numel(ref self) -> Int:

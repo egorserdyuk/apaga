@@ -23,7 +23,7 @@ struct Tensor(Copyable):
         var elem_size = dtype.bytes_per_elem()
         for i in range(n * elem_size):
             tensor.view.ptr[i] = UInt8(0)
-        return tensor
+        return tensor^
 
     @staticmethod
     fn ones(dtype: DType, shape: Shape) raises -> Tensor:
@@ -32,10 +32,10 @@ struct Tensor(Copyable):
         var elem_size = dtype.bytes_per_elem()
         for i in range(n * elem_size):
             tensor.view.ptr[i] = UInt8(1)
-        return tensor
+        return tensor^
 
     fn view_tensor(ref self) -> TensorView:
-        return self.view
+        return self.view.copy()
 
     fn reshape(ref self, new_shape: Shape) raises -> Tensor:
         return Tensor(self.dtype, new_shape, self.owns_memory)

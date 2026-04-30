@@ -16,6 +16,12 @@ struct TensorView(Copyable):
         self.stride = Stride.row_major(shape)
         self.dtype = dtype.copy()
 
+    def __init__(out self):
+        self.ptr = UnsafePointer[UInt8, MutExternalOrigin]()
+        self.shape = Shape()
+        self.stride = Stride()
+        self.dtype = DType.float32()
+
     fn numel(ref self) -> Int:
         return self.shape.numel()
 
@@ -25,7 +31,7 @@ struct TensorView(Copyable):
     fn reshape(ref self, new_shape: Shape) raises -> TensorView:
         if new_shape.numel() != self.shape.numel():
             raise Error("Cannot reshape: total element count mismatch")
-        return TensorView(self.ptr, new_shape, self.dtype)
+        return TensorView(self.ptr, new_shape, self.dtype)^
 
     fn __del__(deinit self):
         pass
