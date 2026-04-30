@@ -46,3 +46,7 @@ mojo run test_apaga.mojo
 ## Version
 
 0.1.0
+
+## License
+
+MIT License
